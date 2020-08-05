@@ -2,4 +2,15 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.page-header {}
+.page-header {
+
+  &__inner {
+    @include container();
+    padding-top: 0.5em;
+  }
+
+  &__grid {
+    @include row();
+    align-items: center;
+  }
+}

@@ -5,15 +5,21 @@
 .main-nav {
 
   $block-name:                &; // #{$block-name}__element
-
-  position: relative;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:-200px;
+  background-color:$black;
   z-index: 10;
+  transition: left 0.5s linear;
 
   // первый уровень
   &__list {
     margin: 0;
     padding: 0;
     list-style: none;
+    display:flex;
+    flex-direction: column;
 
     // мобильный вид списка
     @media (max-width: ($menu-desktop-width - 1)) {
@@ -61,21 +67,26 @@
     &--active {
 
       & > #{$block-name}__link { // stylelint-disable-line  selector-combinator-blacklist
-        color: #000;
+        color: $black;
+        background-color: $white;
       }
     }
   }
 
   &__link {
     display: block;
-    padding: 0.5em 1em;
+    padding: 2.5em 1em;
     text-decoration: none;
-    background-color: #fff;
+    background-color: $black;
+    color:$white;
+    border: 1px solid $black;
 
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: $gray-lightest;
+      background-color: $white;
+      color:$black;
+      
     }
 
     &--lvl-2 {
@@ -161,5 +172,8 @@
     .no-js & {
       display: none;
     }
+  }
+  &--open{
+    left:0px;
   }
 }

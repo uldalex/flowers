@@ -10,9 +10,9 @@ mixin main-nav(selectedID)
 
   //- подключаем файл со структурой данных блока
   include main-nav.data.pug
-
+  +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
   nav.main-nav#nav&attributes(attributes)
-    +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
+  
     ul.main-nav__list
       each menuItem in mainMenu
         +main-nav-item(selectedID, menuItem, 1)
