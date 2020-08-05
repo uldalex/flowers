@@ -41,16 +41,29 @@ html(class='page  no-js', lang='ru')
 
         +page-header()
           +logo('/')
-            img(src='img/logo-top.svg', alt='Цветы', width='109', height='166')
+            svg(class="logo__svg")
+             use(xlink:href="img/sprite.svg#logo-top") 
             h1.logo__title Цветочная <strong>Лавка</strong>
           block nav
           +header-contacts()
-           a(href="tel:+7336147994").header-contacts__phone +7 (33) <strong>614 79 94</strong>
-           a(href="tel:+7336147993").header-contacts__phone +7 (33) <strong>614 79 93</strong>
+           a(href="/").header-contacts__phone +7 (33) <strong>614 79 94</strong>
+           a(href="/").header-contacts__phone +7 (33) <strong>614 79 93</strong>
            div.header-contacts__footer
             a(href="#viber").header-contacts__btn Написать в вибер
-          
-
+        +carousel()
+         figure
+          img(src="img/slide_2.png")
+         figure.active
+          img(src="img/slide_1.png")
+         figure
+          img(src="img/slide_3.png")
+         figure.active
+          img(src="img/slide_2.png")
+         figure
+          img(src="img/slide_1.png")
+         figure
+          img(src="img/slide_3.png")  
+        
         block content
           p содержимое
 

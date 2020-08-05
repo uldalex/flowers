@@ -42,4 +42,10 @@
   img {
     display: inline-block;
   }
+  &__svg {
+    width: 70px;
+    min-width:70px;
+    height: 70px;
+    display: inline-block;
+  }
 }
