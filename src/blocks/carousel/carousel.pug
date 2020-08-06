@@ -20,6 +20,27 @@ mixin carousel(text, mods)
 
   .carousel(class=allMods)&attributes(attributes)
     .carousel__inner
-     #carousel
+     #carousel.splide
+      .splide__track
+       ul.splide__list
+        li.splide__slide
+         figure
+          img(src="img/slide_1.png")
+        li.splide__slide
+         figure
+          img(src="img/slide_2.png")
+        li.splide__slide
+         figure
+          img(src="img/slide_3.png")
+        li.splide__slide
+         figure
+          img(src="img/slide_1.png")
+        li.splide__slide
+         figure
+          img(src="img/slide_2.png")
+        li.splide__slide
+         figure
+          img(src="img/slide_3.png")
       block
+      
 
