@@ -21,26 +21,56 @@ mixin carousel(text, mods)
   .carousel(class=allMods)&attributes(attributes)
     .carousel__inner
      #carousel.splide
+      .carousel__store-desckription
+       .carousel__desckription-title авторские <span>Букеты</span>
+       .carousel__desckription-subtitle к 8 марта <span></span>
+       .carousel__desckription-text из свежих цветов, в<br>стильной и необычной<br>упаковке
+       a.carousel__desckription-btn(href="#") Выбрать букет
+        
       .splide__track
        ul.splide__list
         li.splide__slide
          figure
+          .slide-desckription
+           .slide-desckription__subtitle Букет <span></span>
+           h3.slide-desckription__title «Roses by David Austin»
+           .slide-desckription__price <span>620 ₽</span> 520 ₽
           img(src="img/slide_1.png")
         li.splide__slide
          figure
+          .slide-desckription
+           .slide-desckription__subtitle Букет <span></span>
+           h3.slide-desckription__title «Кофейный»
+           .slide-desckription__price <span>1570 ₽</span> 870 ₽
           img(src="img/slide_2.png")
         li.splide__slide
          figure
+          .slide-desckription
+           .slide-desckription__subtitle Букет <span></span>
+           h3.slide-desckription__title «Летний микс»
+           .slide-desckription__price <span>2890 ₽</span> 2520 ₽
           img(src="img/slide_3.png")
         li.splide__slide
          figure
+          .slide-desckription
+           .slide-desckription__subtitle Букет <span></span>
+           h3.slide-desckription__title «Розовый крафт»
+           .slide-desckription__price <span>1000 ₽</span> 800 ₽
           img(src="img/slide_1.png")
         li.splide__slide
          figure
+          .slide-desckription
+           .slide-desckription__subtitle Букет <span></span>
+           h3.slide-desckription__title «Спрайт»
+           .slide-desckription__price <span>1200 ₽</span> 500 ₽
           img(src="img/slide_2.png")
         li.splide__slide
          figure
+          .slide-desckription
+           .slide-desckription__subtitle Букет <span></span>
+           h3.slide-desckription__title «Название букета»
+           .slide-desckription__price <span>850 ₽</span> 750 ₽
           img(src="img/slide_3.png")
       block
-      
+
 

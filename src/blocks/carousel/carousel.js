@@ -509,6 +509,7 @@
     
       return [];
     }
+    
     /**
      * Create an element with some optional attributes.
      *
@@ -996,6 +997,9 @@
       prev: ROOT + "__arrow--prev",
       next: ROOT + "__arrow--next",
       pagination: ROOT + "__pagination",
+      nambersSlide: ROOT +"__nambers-slide",
+      nambersSlideAll: ROOT +"__nambers-slide__all",
+      nambersSlideItem: ROOT +"__nambers-slide-item",
       page: ROOT + "__pagination__page",
       clone: ROOT + "__slide--clone",
       progress: ROOT + "__progress",
@@ -1031,14 +1035,16 @@
      * @type {Object}
      */
     var I18N = {
-      prev: 'Previous slide',
-      next: 'Next slide',
-      first: 'Go to first slide',
-      last: 'Go to last slide',
-      slideX: 'Go to slide %s',
-      pageX: 'Go to page %s',
-      play: 'Start autoplay',
-      pause: 'Pause autoplay'
+      prev: 'Предыдущий',
+      next: 'Следующий',
+      first: 'К первому',
+      last: 'К последнему',
+      slideX: 'Перейти к %s',
+      slideN: '%s',
+      pageX: 'Перейти к %s',
+      pageN: '%s',
+      play: 'Автопроигрывание',
+      pause: 'Пауза'
     };
     // CONCATENATED MODULE: ./src/js/constants/defaults.js
     /**
@@ -1733,7 +1739,7 @@
     
         this.Components.Elements.add(slide, index, this.refresh.bind(this));
         return this;
-      }
+       }
       /**
        * Remove the slide designated by the index.
        *
@@ -1820,6 +1826,7 @@
         get: function get() {
           return this.Components.Elements.length;
         }
+       
         /**
          * Return options.
          *
@@ -2049,7 +2056,7 @@
           var _this = this;
     
           if (!this.isClone) {
-            slide.id = Splide.root.id + "-slide" + pad(index + 1);
+            slide.id = Splide.root.id + "-slide--" + pad(index + 1);
           }
     
           Splide.on(STATUS_UPDATE_EVENTS, function () {
@@ -2104,8 +2111,9 @@
          */
         isActive: function isActive() {
           return Splide.index === index;
+          
         },
-    
+        
         /**
          * Check whether this slide is visible in the viewport or not.
          *
@@ -2404,8 +2412,8 @@
          */
         get length() {
           return this.slides.length;
-        },
-    
+         },
+        
         /**
          * Return "SlideObjects" length including clones.
          *
@@ -4525,7 +4533,7 @@
      * @type {number}
      */
     
-    var SIZE = 40;
+    var SIZE = 80;
     // CONCATENATED MODULE: ./src/js/components/arrows/index.js
     /**
      * The component for appending prev/next arrows.
@@ -4695,7 +4703,7 @@
     
     
       function createArrow(prev) {
-        var arrow = "<button class=\"" + classes.arrow + " " + (prev ? classes.prev : classes.next) + "\" type=\"button\">" + ("<svg xmlns=\"" + XML_NAME_SPACE + "\"\tviewBox=\"0 0 " + SIZE + " " + SIZE + "\"\twidth=\"" + SIZE + "\"\theight=\"" + SIZE + "\">") + ("<path d=\"" + (Splide.options.arrowPath || PATH) + "\" />");
+        var arrow = "<button class=\"" + classes.arrow + " " + (prev ? classes.prev : classes.next) + "\" type=\"button\">" + ("<svg class='arrows' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' preserveAspectRatio='xMidYMid' width='39.5' height='32' viewBox='0 0 39.5 32'>") + ("<circle class='arrows__circle' cx='16' cy='16' r='15.5'  /><path d='M39.000,14.999 L9.000,14.999 L9.000,15.999 L39.000,15.999 L39.000,14.999 Z' /><path d='M9.715,14.985 L17.015,22.283 L16.285,23.014 L8.985,15.714 L9.715,14.985 Z'/><path d='M16.285,7.984 L8.985,15.284 L9.715,16.014 L17.015,8.714 L16.285,7.984 Z' />");
         return domify(arrow);
       }
     
@@ -4858,24 +4866,43 @@
        *
        * @return {Object} - An object contains all data.
        */
-    
-    
+       
       function createPagination() {
-        var options = Splide.options;
+       var options = Splide.options;
         var classes = Splide.classes;
         var list = create('ul', {
-          "class": classes.pagination
-        });
+            "class": classes.pagination
+          });
+        var div = create('li', {"class": classes.nambersSlide});
+        var all = Elements.length; 
+        var allspan = create('li', {"class": classes.nambersSlideAll});
+        if (all < 10){
+        allspan.innerHTML +='0'+ all;
+        }
+        else{
+        allspan.innerHTML += all;   
+        }
         var items = Elements.getSlides(false).filter(function (Slide) {
           return options.focus !== false || Slide.index % options.perPage === 0;
         }).map(function (Slide, page) {
-          var li = create('li', {});
+         var span = create ('span',{"class":classes.nambersSlideItem}); 
+         var text = Slide.index +1;
+         var li = create('li', {});
           var button = create('button', {
             "class": classes.page,
             type: 'button'
           });
+          if (text < 10){
+          span.innerHTML += '0' + text;
+          }
+          else{
+          span.innerHTML += text;   
+          }
           append(li, button);
           append(list, li);
+          append(button, span);
+          append(list, div);
+          append(list, allspan);
           Splide.on('click', function () {
             Splide.go(">" + page);
           }, button);
@@ -4886,10 +4913,12 @@
             Slides: Elements.getSlidesByPage(page)
           };
         });
+       // append(list, div);
         return {
           list: list,
           items: items
         };
+        
       }
     
       return Pagination;
@@ -5133,6 +5162,7 @@
      */
     
     var ARIA_LABEL = 'aria-label';
+    var VALUE = 'value';
     /**
      * Attribute name for aria-labelledby.
      *
@@ -5383,19 +5413,24 @@
     
       function initPagination(data, activeItem) {
         if (activeItem) {
-          setAttribute(activeItem.button, ARIA_CURRENRT, true);
+                   setAttribute(activeItem.button, ARIA_CURRENRT, true);
+          
         }
     
         data.items.forEach(function (item) {
           var options = Splide.options;
+          
           var text = options.focus === false && options.perPage > 1 ? i18n.pageX : i18n.slideX;
+          var numtext = options.focus === false && options.perPage > 1 ? i18n.pageN : i18n.slideN;
           var label = sprintf(text, item.page + 1);
+          var numberSlide = sprintf(numtext, item.page + 1);
           var button = item.button;
           var controls = item.Slides.map(function (Slide) {
             return Slide.slide.id;
           });
           setAttribute(button, ARIA_CONTROLS, controls.join(' '));
           setAttribute(button, ARIA_LABEL, label);
+          setAttribute(button, VALUE, numberSlide);
         });
       }
       /**
@@ -5885,10 +5920,19 @@
     /******/ ]);
 
     document.addEventListener( 'DOMContentLoaded', function () {
-		new Splide( '#carousel', {
-            type   : 'loop',
+		var splide =new Splide( '#carousel', {
+            type: 'loop',
             perPage: 3,
             focus  : 'center',
-        } ).mount();
+            autoplay: true,
+            pagination:true,
+
+            } ).mount();
+        var myElement = document.querySelector('.splide__list > li.is-visible');
+        myElement.classList.add('first');
+            splide.on( 'moved', function() {
+             document.querySelectorAll('.splide__list .splide__slide').forEach(n => n.classList.remove('first'))
+            var myElement = document.querySelector('.splide__list > li.is-visible');
+            myElement.classList.add('first');
+        });
     } );
-  
