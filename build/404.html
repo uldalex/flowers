@@ -123,6 +123,378 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');
           </div>
         </div>
       </div>
+      <div class="multyform">
+        <div class="multyform__inner">
+          <div class="multyform__content">
+            <form class="multyform__form multyform-form ajax-form" metod="get" action="mail.php">
+              <div class="open" id="step_1">
+                <div class="multyform__title">На какое мероприятие вам <span class="multyform__title--big">Необходим букет</span><span class="multyform__title--bigger">?</span></div>
+                <div class="multyform__form-title">подбор букета <strong>шаг</strong> <span class="multyform__form-counter" id="multyform-counter">01</span><span>/03 </span></div>
+                <ul class="multyform__form-list">
+                  <li class="multyform__form-item"><input class="multyform__form-input" id="step1-1" type="radio" name="event" value="8 марта" checked="checked" /><label class="multyform__form-label" for="step1-1">8 марта</label></li>
+                  <li class="multyform__form-item"><input class="multyform__form-input" id="step1-2" type="radio" name="event" value="день рождения" /><label class="multyform__form-label" for="step1-2">день рождения</label></li>
+                  <li class="multyform__form-item"><input class="multyform__form-input" id="step1-3" type="radio" name="event" value="свидание" /><label class="multyform__form-label" for="step1-3">свидание</label></li>
+                  <li class="multyform__form-item"><input class="multyform__form-input" id="step1-4" type="radio" name="event" value="любовнице" /><label class="multyform__form-label" for="step1-4">любовнице</label></li>
+                </ul>
+              </div>
+              <div id="step_2">
+                <div class="multyform__title">Какие есть предпочтения <span class="multyform__title--big">По подбору букета</span><span class="multyform__title--bigger">?</span></div>
+                <div class="multyform__form-title">подбор букета <strong>шаг</strong> <span class="multyform-form__counter" id="multyform-counter">02</span><span>/03 </span></div>
+                <ul class="multyform__form-list">
+                  <li class="multyform__form-item"><input class="multyform__form-input" id="step2-1" type="radio" name="flower" value="Розы" checked="checked" /><label class="multyform__form-label" for="step2-1">Розы</label></li>
+                  <li class="multyform__form-item"><input class="multyform__form-input" id="step2-2" type="radio" name="flower" value="Композиция" /><label class="multyform__form-label" for="step2-2">Композиция</label></li>
+                  <li class="multyform__form-item"><input class="multyform__form-input" id="step2-3" type="radio" name="flower" value="Тюльпаны" /><label class="multyform__form-label" for="step2-3">тюльпаны</label></li>
+                  <li class="multyform__form-item"><input class="multyform__form-input" id="step2-4" type="radio" name="flower" value="другое" /><label class="multyform__form-label" for="step2-4">другое</label></li>
+                </ul>
+              </div>
+              <div id="step_3">
+                <div class="multyform__title">Мы уже подбираем <span class="multyform__title--big">варианты</span></div>
+                <div class="multyform__form-title">подбор букета <strong>шаг</strong> <span class="multyform-form__counter" id="multyform-counter">03</span><span>/03 </span></div>
+                <div class="multyform__form-title multyform__form-title--result">В течение 10 минут пришлем 5 фотографий букетов по вашим параметрам, с точной стоимостью<span class="multyform__form-title-span">Куда отправить?</span></div>
+                <div class="multyform-form__buttons">
+                  <div class="multyform-form__nav"><a class="multyform__form-link multyform__form-link--viber" id="multyform-viber" href="#"> <svg class="multyform__form-svg-viber">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg><span>Отправить в вибер</span></a><input class="hidden" id="viber-input" type="tel" name="viber" placeholder="+7 901 475-55-74" /></div>
+                  <div class="multyform-form__nav"><a class="multyform__form-link multyform__form-link--coll" id="multyform-tel" href="#"> <svg class="multyform__form-svg-coll">
+                        <use xlink:href="img/sprite.svg#coll"> </use>
+                      </svg><span>Сообщить по телефону</span></a><input class="hidden" id="tel-input" type="tel" name="phone" placeholder="+7 901 475-55-74" /></div>
+                </div>
+              </div>
+              <div class="multyform-form__buttons">
+                <div class="multyform-form__nav"><a class="multyform__form-link multyform__form-link--back hidden" href="#" id="prev-btn"> <svg class="multyform__form-svg multyform__form-svg--back">
+                      <use xlink:href="img/sprite.svg#arrow_btn"> </use>
+                    </svg><span>Назад</span></a></div>
+                <div class="multyform-form__nav"><a class="multyform__form-link multyform__form-link--next" href="#" id="next-btn"><span>Вперед </span><svg class="multyform__form-svg">
+                      <use xlink:href="img/sprite.svg#arrow_btn"></use>
+                    </svg></a><input type="hidden" name="formData" value="Сообщение с сайта Цветы" id="formData" /><button class="hidden multyform__submit" id="multyform__submit" type="submit" value="отправить">Отправить<svg class="multyform-form__svg">
+                      <use xlink:href="img/sprite.svg#arrow_btn"> </use>
+                    </svg></button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <section id="about">
+        <h2 class="section-title"><span>Выразите свои</span><br>чувства иначе</h2>
+      </section>
+      <div class="flowers">
+        <div class="flowers__inner">
+          <div class="flowers__row">
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_1.jpg" /></div>
+            <div class="flowers__column">
+              <div class="flowers__content">
+                <div class="flowers__background">01</div>
+                <div class="flowers__title">Фантастическая композиция</div>
+                <div class="flowers__text">
+                  <p>Каждый букет - это уникальная цветочная история, созданная нашими талантливыми флористами для особых людей и моментов.</p>
+                  <p>Даже самые простые композиции вызывают радость и бурю эмоций, ведь это прекрасное сочетание необычной упаковки, красивых растений и цветовой палитры.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flowers__row">
+            <div class="flowers__border"></div>
+            <div class="flowers__column">
+              <div class="flowers__content">
+                <div class="flowers__background">02</div>
+                <div class="flowers__title">Свежие цветы премиум-класса</div>
+                <div class="flowers__text">
+                  <p>Мы создаем букеты только из свежих растений голландских и эквадорских сортов премиум-класса, поэтому от наших композиций всегда веет свежестью и настоящей красотой.</p>
+                  <p>Наши букеты гармонично передадут ваше настроение, точно донесут теплые чувства и долго простоят в вазе, радуя обладателя.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_2.png" /></div>
+          </div>
+          <div class="flowers__row">
+            <div class="flowers__column flowers__column--last"><img class="flowers__img" src="/img/flower_3.png" /></div>
+            <div class="flowers__column">
+              <div class="flowers__content">
+                <div class="flowers__background">03</div>
+                <div class="flowers__title">Оригинальный дизайн упаковки</div>
+                <div class="flowers__text">
+                  <p>Нам необходимо тезисное описание упаковки, почему она крутая, чтобы мы могли составить преимущеста.</p>
+                  <p>Даже самые простые наши композиции вызывают восторг и эмоции, ведь это прекрасное сочетание необычной упаковки, красивых растений и цветовой палитры.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section id="bue">
+        <h2 class="section-title"><span>Выберите свою</span><br>волшебную композицию    </h2>
+      </section>
+      <div class="flowers">
+        <div class="flowers__inner">
+          <div class="flowers__row">
+            <div class="flowers__border flowers__border--bue"></div>
+            <div class="flowers__subtitle flowers__subtitle--left">...создана удивлять</div>
+            <div class="flowers__column">
+              <div class="flowers__content flowers__content--bue">
+                <div class="flowers__title flowers__title--bue">«Название композиции»</div>
+                <div class="flowers__text">
+                  <p>Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение </p>
+                </div>
+                <div class="flowers__price">1570 ₽ </div>
+                <div class="flowers__payment"><svg class="icons flowers__payment-svg">
+                    <use xlink:href="img/sprite.svg#deposit"> </use>
+                  </svg><span>Оплата наличными или картой</span></div>
+                <div class="flowers__delovery"><svg class="icons flowers__delovery-svg">
+                    <use xlink:href="img/sprite.svg#fast-delivery"> </use>
+                  </svg><span>Возможна доставка в течение 1 часа </span></div>
+                <div class="flowers__buttons">
+                  <div class="flowers__viber-container"><a class="flowers__bue" href="#">Заказать</a></div>
+                  <div class="flowers__viber-container"><a class="flowers__viber" href="#"><svg class="icons" width="20" height="21" viewBox="0 0 28 31">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_4.jpg" /></div>
+          </div>
+          <div class="flowers__row">
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_5.jpg" /></div>
+            <div class="flowers__border flowers__border--bue"></div>
+            <div class="flowers__subtitle flowers__subtitle--right">...передает главные чувства</div>
+            <div class="flowers__column">
+              <div class="flowers__content flowers__content--bue">
+                <div class="flowers__title flowers__title--bue">«Название композиции»</div>
+                <div class="flowers__text">
+                  <p>Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение </p>
+                </div>
+                <div class="flowers__price">1570 ₽ </div>
+                <div class="flowers__payment"><svg class="icons flowers__payment-svg">
+                    <use xlink:href="img/sprite.svg#deposit"> </use>
+                  </svg><span>Оплата наличными или картой</span></div>
+                <div class="flowers__delovery"><svg class="icons flowers__delovery-svg">
+                    <use xlink:href="img/sprite.svg#fast-delivery"> </use>
+                  </svg><span>Возможна доставка в течение 1 часа </span></div>
+                <div class="flowers__buttons">
+                  <div class="flowers__viber-container"><a class="flowers__bue" href="#">Заказать</a></div>
+                  <div class="flowers__viber-container"><a class="flowers__viber" href="#"><svg class="icons" width="20" height="21" viewBox="0 0 28 31">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flowers__row">
+            <div class="flowers__border flowers__border--bue"></div>
+            <div class="flowers__subtitle flowers__subtitle--left">...дарит хорошее настроение</div>
+            <div class="flowers__column">
+              <div class="flowers__content flowers__content--bue">
+                <div class="flowers__title flowers__title--bue">«Название композиции»</div>
+                <div class="flowers__text">
+                  <p>Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение </p>
+                </div>
+                <div class="flowers__price">1570 ₽ </div>
+                <div class="flowers__payment"><svg class="icons flowers__payment-svg">
+                    <use xlink:href="img/sprite.svg#deposit"> </use>
+                  </svg><span>Оплата наличными или картой</span></div>
+                <div class="flowers__delovery"><svg class="icons flowers__delovery-svg">
+                    <use xlink:href="img/sprite.svg#fast-delivery"> </use>
+                  </svg><span>Возможна доставка в течение 1 часа </span></div>
+                <div class="flowers__buttons">
+                  <div class="flowers__viber-container"><a class="flowers__bue" href="#">Заказать</a></div>
+                  <div class="flowers__viber-container"><a class="flowers__viber" href="#"><svg class="icons" width="20" height="21" viewBox="0 0 28 31">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_6.jpg" /></div>
+          </div>
+        </div>
+      </div>
+      <section id="buket">
+        <h2 class="section-title"><span>Выберите свой</span><br>неповторимый букет    </h2>
+      </section>
+      <div class="flowers">
+        <div class="flowers__inner">
+          <div class="flowers__row">
+            <div class="flowers__border flowers__border--bue"></div>
+            <div class="flowers__subtitle flowers__subtitle--left">...дарит радость</div>
+            <div class="flowers__column">
+              <div class="flowers__content flowers__content--bue">
+                <div class="flowers__title flowers__title--bue">«Название букета»</div>
+                <div class="flowers__text">
+                  <p>Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение </p>
+                </div>
+                <div class="flowers__price">1570 ₽ </div>
+                <div class="flowers__payment"><svg class="icons flowers__payment-svg">
+                    <use xlink:href="img/sprite.svg#deposit"> </use>
+                  </svg><span>Оплата наличными или картой</span></div>
+                <div class="flowers__delovery"><svg class="icons flowers__delovery-svg">
+                    <use xlink:href="img/sprite.svg#fast-delivery"> </use>
+                  </svg><span>Возможна доставка в течение 1 часа </span></div>
+                <div class="flowers__buttons">
+                  <div class="flowers__viber-container"><a class="flowers__bue" href="#">Заказать</a></div>
+                  <div class="flowers__viber-container"><a class="flowers__viber" href="#"><svg class="icons" width="20" height="21" viewBox="0 0 28 31">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_4.jpg" /></div>
+          </div>
+          <div class="flowers__row">
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_5.jpg" /></div>
+            <div class="flowers__border flowers__border--bue"></div>
+            <div class="flowers__subtitle flowers__subtitle--right">...воплощение нежности</div>
+            <div class="flowers__column">
+              <div class="flowers__content flowers__content--bue">
+                <div class="flowers__title flowers__title--bue">«Название букета»</div>
+                <div class="flowers__text">
+                  <p>Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение </p>
+                </div>
+                <div class="flowers__price">1570 ₽ </div>
+                <div class="flowers__payment"><svg class="icons flowers__payment-svg">
+                    <use xlink:href="img/sprite.svg#deposit"> </use>
+                  </svg><span>Оплата наличными или картой</span></div>
+                <div class="flowers__delovery"><svg class="icons flowers__delovery-svg">
+                    <use xlink:href="img/sprite.svg#fast-delivery"> </use>
+                  </svg><span>Возможна доставка в течение 1 часа </span></div>
+                <div class="flowers__buttons">
+                  <div class="flowers__viber-container"><a class="flowers__bue" href="#">Заказать</a></div>
+                  <div class="flowers__viber-container"><a class="flowers__viber" href="#"><svg class="icons" width="20" height="21" viewBox="0 0 28 31">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flowers__row">
+            <div class="flowers__border flowers__border--bue"></div>
+            <div class="flowers__subtitle flowers__subtitle--left">...говорит о любви</div>
+            <div class="flowers__column">
+              <div class="flowers__content flowers__content--bue">
+                <div class="flowers__title flowers__title--bue">«Название букета»</div>
+                <div class="flowers__text">
+                  <p>Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение </p>
+                </div>
+                <div class="flowers__price">1570 ₽ </div>
+                <div class="flowers__payment"><svg class="icons flowers__payment-svg">
+                    <use xlink:href="img/sprite.svg#deposit"> </use>
+                  </svg><span>Оплата наличными или картой</span></div>
+                <div class="flowers__delovery"><svg class="icons flowers__delovery-svg">
+                    <use xlink:href="img/sprite.svg#fast-delivery"> </use>
+                  </svg><span>Возможна доставка в течение 1 часа </span></div>
+                <div class="flowers__buttons">
+                  <div class="flowers__viber-container"><a class="flowers__bue" href="#">Заказать</a></div>
+                  <div class="flowers__viber-container"><a class="flowers__viber" href="#"><svg class="icons" width="20" height="21" viewBox="0 0 28 31">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_6.jpg" /></div>
+          </div>
+        </div>
+      </div>
+      <section id="spring">
+        <h2 class="section-title"><span>Выберите цветы</span><br>с весенним настроением    </h2>
+      </section>
+      <div class="flowers">
+        <div class="flowers__inner">
+          <div class="flowers__row">
+            <div class="flowers__border flowers__border--bue"></div>
+            <div class="flowers__subtitle flowers__subtitle--left">...дарит весеннее настроение</div>
+            <div class="flowers__column">
+              <div class="flowers__content flowers__content--bue">
+                <div class="flowers__title flowers__title--bue">«Название букета»</div>
+                <div class="flowers__text">
+                  <p>Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение </p>
+                </div>
+                <div class="flowers__price">1570 ₽ </div>
+                <div class="flowers__payment"><svg class="icons flowers__payment-svg">
+                    <use xlink:href="img/sprite.svg#deposit"> </use>
+                  </svg><span>Оплата наличными или картой</span></div>
+                <div class="flowers__delovery"><svg class="icons flowers__delovery-svg">
+                    <use xlink:href="img/sprite.svg#fast-delivery"> </use>
+                  </svg><span>Возможна доставка в течение 1 часа </span></div>
+                <div class="flowers__buttons">
+                  <div class="flowers__viber-container"><a class="flowers__bue" href="#">Заказать</a></div>
+                  <div class="flowers__viber-container"><a class="flowers__viber" href="#"><svg class="icons" width="20" height="21" viewBox="0 0 28 31">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_4.jpg" /></div>
+          </div>
+          <div class="flowers__row">
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_5.jpg" /></div>
+            <div class="flowers__border flowers__border--bue"></div>
+            <div class="flowers__subtitle flowers__subtitle--right">...гармония весны</div>
+            <div class="flowers__column">
+              <div class="flowers__content flowers__content--bue">
+                <div class="flowers__title flowers__title--bue">«Название букета»</div>
+                <div class="flowers__text">
+                  <p>Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение </p>
+                </div>
+                <div class="flowers__price">1570 ₽ </div>
+                <div class="flowers__payment"><svg class="icons flowers__payment-svg">
+                    <use xlink:href="img/sprite.svg#deposit"> </use>
+                  </svg><span>Оплата наличными или картой</span></div>
+                <div class="flowers__delovery"><svg class="icons flowers__delovery-svg">
+                    <use xlink:href="img/sprite.svg#fast-delivery"> </use>
+                  </svg><span>Возможна доставка в течение 1 часа </span></div>
+                <div class="flowers__buttons">
+                  <div class="flowers__viber-container"><a class="flowers__bue" href="#">Заказать</a></div>
+                  <div class="flowers__viber-container"><a class="flowers__viber" href="#"><svg class="icons" width="20" height="21" viewBox="0 0 28 31">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flowers__row">
+            <div class="flowers__border flowers__border--bue"></div>
+            <div class="flowers__subtitle flowers__subtitle--left">...говорит о любви</div>
+            <div class="flowers__column">
+              <div class="flowers__content flowers__content--bue">
+                <div class="flowers__title flowers__title--bue">«Название букета»</div>
+                <div class="flowers__text">
+                  <p>Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение </p>
+                </div>
+                <div class="flowers__price">1570 ₽ </div>
+                <div class="flowers__payment"><svg class="icons flowers__payment-svg">
+                    <use xlink:href="img/sprite.svg#deposit"> </use>
+                  </svg><span>Оплата наличными или картой</span></div>
+                <div class="flowers__delovery"><svg class="icons flowers__delovery-svg">
+                    <use xlink:href="img/sprite.svg#fast-delivery"> </use>
+                  </svg><span>Возможна доставка в течение 1 часа </span></div>
+                <div class="flowers__buttons">
+                  <div class="flowers__viber-container"><a class="flowers__bue" href="#">Заказать</a></div>
+                  <div class="flowers__viber-container"><a class="flowers__viber" href="#"><svg class="icons" width="20" height="21" viewBox="0 0 28 31">
+                        <use xlink:href="img/sprite.svg#viber"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="flowers__column"><img class="flowers__img" src="/img/flower_6.jpg" /></div>
+          </div>
+        </div>
+        <section id="bron">
+          <div class="flowers">
+            <div class="flowers__row flowers__row--form">
+              <div class="flowers__column"><img class="flowers__img" src="/img/tulpus.png" /></div>
+              <div class="flowers__column flowers__column--mini">
+                <div>
+                  <h2 class="section-title section-title--big"><span>Хотите забронировать</span><br>Букет на 8 марта?</h2>
+                  <div class="flowers__text">
+                    <div class="flowers__line"></div>
+                    <p>Соберем букет без предоплаты, привезем в нужное время и место по указанному адресу</p>
+                    <div class="flowers__buttons">
+                      <div class="flowers__viber-container"><a class="flowers__bue" href="#">Забронировать </a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
       <h1>Error 404</h1>
       <p>Page not found.</p>
     </div>

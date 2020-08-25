@@ -9,7 +9,7 @@
     background: invert($black);
     color: invert($white);
     border: 1px solid $black;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
 }
 
@@ -24,7 +24,23 @@
     background: invert($white);
     color: invert($black);
     border: 1px solid transparent;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
+  }
+}
+
+@mixin viber-btn() {
+  background: $white;
+  color: $black;
+  border: 1px solid $vaiolit;
+  border-radius: 30px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $vaiolit;
+    color:$white;
+    border: 1px solid $vaiolit;
+    transition: all 0.5s ease;
   }
 }
 

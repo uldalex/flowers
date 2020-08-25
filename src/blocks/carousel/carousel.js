@@ -5925,14 +5925,12 @@
             perPage: 3,
             focus  : 'center',
             autoplay: true,
-            pagination:true,
-
             } ).mount();
-        var myElement = document.querySelector('.splide__list > li.is-visible');
-        myElement.classList.add('first');
+        var firstElement = document.querySelector('.splide__list > li.is-visible');
+        firstElement.classList.add('first');
             splide.on( 'moved', function() {
              document.querySelectorAll('.splide__list .splide__slide').forEach(n => n.classList.remove('first'))
-            var myElement = document.querySelector('.splide__list > li.is-visible');
-            myElement.classList.add('first');
+            var firstElement = document.querySelector('.splide__list > li.is-visible');
+            firstElement.classList.add('first');
         });
     } );
