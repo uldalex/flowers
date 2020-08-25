@@ -14,6 +14,6 @@ mixin burger(label, targetId, switchableClass)
     label = label || 'Меню ' + targetId
     if (typeof(targetId) !== 'undefined' && targetId !== '') attributes['data-target-id'] = targetId
     if (typeof(switchableClass) !== 'undefined' && switchableClass !== '') attributes['data-target-class-toggle'] = switchableClass
-  div.burger
+  .burger
    button.burger__btn(aria-label=label)&attributes(attributes)
     span= label

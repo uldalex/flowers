@@ -171,6 +171,9 @@
     &:active,
     &:focus {
 
+      > svg {
+        fill: $white;
+      }
     }
   }
 
